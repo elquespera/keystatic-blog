@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import { reader } from './reader';
-import './styles.css';
+import Link from "next/link";
+import { reader } from "./reader";
+import "./styles.css";
 
 export default async function Homepage() {
   const posts = await reader.collections.posts.all();
@@ -13,9 +13,10 @@ export default async function Homepage() {
         <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
         below to view a post in the collection.
       </p>
+      <p>Just Testing</p>
       <h2>Posts</h2>
       <ul>
-        {posts.map(post => (
+        {posts.map((post) => (
           <li key={post.slug}>
             <Link href={`/${post.slug}`}>{post.entry.title}</Link>
           </li>
